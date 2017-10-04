@@ -1,0 +1,36 @@
+====================================
+Cross platform basati su webengines.
+====================================
+
+(o motori di rendering)
+
+- inglobare una pagina web in una finestra del browser senza le limitazioni tipiche imposte dal browser (accesso al filesystem e ai vari dispositivi), per creare una applicazione nativa (più o meno)
+
+- Meteor: applicazione js+html che non ha limitazioni di accesso al filesystem. Richiede l'installazione di node e di altri pacchetti nella macchina target, non crea un vero e proprio eseguibile, ovvero non compila il codice. Ha il vantaggio di avere come target anche 
+
+- Electron: permette di creare applicazione js+html senza limitazioni. In più compila nativamente il codice per la macchina target. Ha un rendiring engine basato su webkit (chromium) e non supporta target come iOS e Android per la compilazione.
+
+- Cordova: framework pensato specificamente per dispositivi mobile. Cordova definisce una serie di plugin per accedere alle risorse del dispositivo, l'applicazione dichiara a quali risorse vuole poter accedere, quindi da Javascript sarà possibile richiamare i metodi ad esse associate, ovvero associati ai plugin caricati. Tutto questo è pensato per i dispositivi mobile dove la lista di permessi deve essere dichiarata al momento della installazione di una applicazione. Es.: https://cordova.apache.org/docs/en/2.5.0/cordova/accelerometer/accelerometer.html
+
+ Dal punto di vista della applicazione js+html si può usare quello che si preferisce, ad esempio qui
+ https://github.com/unimonkiez/react-cordova-boilerplate
+ si usa react + webpack
+
+- ionic è semplicemente un framework basato su Cordova, con dei componenti standard che cerca di unificare e velocizzare la creazione di applicazioni per più target di Cordova, mantenendo la coerenza tra esse.
+
+- Positron https://github.com/mozilla/positron è stato un tentativo di usare il rendering engine di firefox per fare la stessa cosa che fa Electron. Poi chiuso.
+
+- Servo based runtime https://github.com/servo/servo/issues/7379 (idea)
+
+- https://www.gnu.org/software/pythonwebkit/ un backend in python e webkit per html+js. Da l'opportunità di usare moduli python per controllare la webview, ma ovviamente richiede l'installazione di python (analogamente a come Meteor richiede l'installazione di Node.js).
+
+- https://github.com/paulrouget/servoshell qualcosa di molto simile a Electron (firefox engine)
+
+- Edge https://github.com/tjanczuk/edge che vantaggi si hanno con Edge? si possono esportare moduli scritti in C# verso node.js, quindi usarli all'interno della webview.
+
+ - https://github.com/kexplo/electron-edge un fork
+
+- ReactNative non è un vero e proprio html+js, permette infatti di usare i componenti disponibili, e comporli per creare una applicazione, ma non l'html vero e proprio. Compila nativamente per iOS e Android, vere e proprie applicazioni native.
+
+
+Questo articolo è una bozza, evidentemente.
